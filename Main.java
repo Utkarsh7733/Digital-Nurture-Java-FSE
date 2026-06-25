@@ -2,16 +2,24 @@ public class Main {
 
     public static void main(String[] args) {
 
-        DocumentFactory wordFactory = new WordDocumentFactory();
-        Document word = wordFactory.createDocument();
-        word.open();
+        Computer gamingPC = new Computer.Builder()
+                .setCpu("Intel i9")
+                .setRam(32)
+                .setStorage(1000)
+                .build();
 
-        DocumentFactory pdfFactory = new PdfDocumentFactory();
-        Document pdf = pdfFactory.createDocument();
-        pdf.open();
+        Computer officePC = new Computer.Builder()
+                .setCpu("Intel i5")
+                .setRam(16)
+                .setStorage(512)
+                .build();
 
-        DocumentFactory excelFactory = new ExcelDocumentFactory();
-        Document excel = excelFactory.createDocument();
-        excel.open();
+        System.out.println("Gaming PC:");
+        gamingPC.display();
+
+        System.out.println();
+
+        System.out.println("Office PC:");
+        officePC.display();
     }
 }
